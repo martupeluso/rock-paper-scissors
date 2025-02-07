@@ -13,7 +13,7 @@ function getComputerChoice(){
 
 function getPlayerChoice() {
     let playerChoice = (prompt("Rock, paper or scissors?") ?? "").toLowerCase();
-    
+
     if (playerChoice === "rock" || playerChoice === "paper" || playerChoice === "scissors"){
         return playerChoice;
     }else{
@@ -21,3 +21,6 @@ function getPlayerChoice() {
         return getPlayerChoice();
     }
 }
+
+let playerScore = 0;
+let computerScore = 0;
