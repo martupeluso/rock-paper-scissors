@@ -17,7 +17,7 @@ function getPlayerChoice() {
     if (playerChoice === "rock" || playerChoice === "paper" || playerChoice === "scissors"){
         return playerChoice;
     }else{
-        console.log("That's not an option! Try again")
+        console.info("That's not an option! Try again")
         return getPlayerChoice();
     }
 }
@@ -30,12 +30,12 @@ function playGame(){
 
     function playRound(playerChoice, computerChoice) {
         if (playerChoice === computerChoice){
-            console.log(`It's a tie! You both chose ${playerChoice}.`);
+            console.info(`It's a tie! You both chose ${playerChoice}.`);
         }else if (playerChoice === "rock" && computerChoice === "scissors" || playerChoice === "paper" && computerChoice === "rock" || playerChoice === "scissors" && computerChoice === "paper"){
-            console.log(`You win! You chose ${playerChoice} and the computer chose ${computerChoice}.`);
+            console.info(`You win! You chose ${playerChoice} and the computer chose ${computerChoice}.`);
             playerScore++;
         }else {
-            console.log(`You lose! You chose ${playerChoice} and the computer chose ${computerChoice}.`);
+            console.info(`You lose! You chose ${playerChoice} and the computer chose ${computerChoice}.`);
             computerScore++;
         }
         roundsPlayed++;
