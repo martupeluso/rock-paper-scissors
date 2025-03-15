@@ -28,6 +28,9 @@ buttons.forEach(button => {
     })
 })
 
+const playerScoreDisplay = document.querySelector(".score-container.player p:nth-child(2)")
+const computerScoreDisplay = document.querySelector(".score-container.computer p:nth-child(2)")
+
 const roundResult = document.querySelector(".round-result");
 
 function playRound(playerChoice, computerChoice) {
@@ -41,4 +44,6 @@ function playRound(playerChoice, computerChoice) {
         roundResult.textContent = `You lose! You chose ${playerChoice} and the computer chose ${computerChoice}.`;
         computerScore++;
     }
+    playerScoreDisplay.textContent = playerScore;
+    computerScoreDisplay.textContent = computerScore;
 }
