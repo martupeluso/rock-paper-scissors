@@ -67,6 +67,24 @@ function displayFinalResult() {
     const button = document.createElement("button");
     button.textContent = "Play again";
 
+    button.addEventListener("click", () => {
+        playerScore = 0;
+        computerScore = 0;
+
+        playerScoreDisplay.textContent = playerScore;
+        computerScoreDisplay.textContent = computerScore;
+
+        roundResult.textContent = "Waiting for your choice..."
+        roundResult.style.color = "grey"
+
+        buttons.forEach(button => {
+            button.disabled = false;
+            button.style.opacity = 1;
+        });
+
+        div.remove();
+    })
+
     div.append(p, button);
 
     roundResult.after(div);
