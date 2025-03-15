@@ -26,8 +26,6 @@ function playGame(){
     let playerScore = 0;
     let computerScore = 0;
 
-    let roundsPlayed = 0;
-
     function playRound(playerChoice, computerChoice) {
         if (playerChoice === computerChoice){
             console.info(`It's a tie! You both chose ${playerChoice}.`);
@@ -37,24 +35,6 @@ function playGame(){
         }else {
             console.info(`You lose! You chose ${playerChoice} and the computer chose ${computerChoice}.`);
             computerScore++;
-        }
-        roundsPlayed++;
-    }
-
-    while (roundsPlayed < 5) {
-        let playerChoice = getPlayerChoice();
-        let computerChoice = getComputerChoice();
-
-        playRound(playerChoice, computerChoice);
-    }
-
-    if (roundsPlayed === 5){
-        console.info(`Game is over! Player: ${playerScore} - Computer: ${computerScore}`)
-
-        if(playerScore === computerScore){
-            console.info("It's a tie!");
-        }else {
-            console.info(playerScore > computerScore ? "You won!" : "You lost!");
         }
     }
 }
