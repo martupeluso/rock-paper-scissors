@@ -27,7 +27,7 @@ p {
     text-align: center;
 }
 
-.score-container p:first-child {
+.score-container p:first-child, .final-result p {
     text-decoration: underline;
 }
 
@@ -38,7 +38,7 @@ p {
     margin: 72px;
 }
 
-.buttons-container {
+.buttons-container, .final-result {
     display: flex;
     gap: 28px;
 }
@@ -58,4 +58,22 @@ p {
 
 .round-result {
     color: grey;
+    padding-bottom: 42px;
+}
+
+.final-result {
+    display: flex;
+    align-items: center;
+}
+
+.final-result button {
+    font-family: "Balsamiq Sans";
+    width: 140px;
+    height: 40px;
+    border: none;
+    border-radius: 50px;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
 }

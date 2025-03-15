@@ -52,6 +52,22 @@ function playRound(playerChoice, computerChoice) {
         buttons.forEach(button => {
             button.disabled = true;
             button.style.opacity = 0.33;
-        })
+        });
+        displayFinalResult();
     };
+}
+
+function displayFinalResult() {
+    const div = document.createElement("div");
+    div.className = "final-result";
+
+    const p = document.createElement("p");
+    p.textContent = playerScore === 5 ? "Player wins!" : "Computer wins!"
+
+    const button = document.createElement("button");
+    button.textContent = "Play again";
+
+    div.append(p, button);
+
+    roundResult.after(div);
 }
