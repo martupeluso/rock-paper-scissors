@@ -44,6 +44,14 @@ function playRound(playerChoice, computerChoice) {
         roundResult.textContent = `You lose! You chose ${playerChoice} and the computer chose ${computerChoice}.`;
         computerScore++;
     }
+    
     playerScoreDisplay.textContent = playerScore;
     computerScoreDisplay.textContent = computerScore;
+
+    if (playerScore === 5 || computerScore === 5){
+        buttons.forEach(button => {
+            button.disabled = true;
+            button.style.opacity = 0.33;
+        })
+    };
 }
