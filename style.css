@@ -1,9 +1,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
   
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Balsamiq Sans', Arial, sans-serif;
+}
+
+h1 {
+    font-family: "Delicious Handrawn", Arial, sans-serif;
+    font-weight: normal;
+    font-size: 62px;
+}
+
+p {
+    font-size: 24px;
+    text-align: center;
+}
+
+.score-container p:first-child {
+    text-decoration: underline;
+}
+
+.main-container {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    margin: 72px;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 28px;
+}
+
+.main-container button {
+    background: none;
+    border: 3px solid black;
+    border-radius: 100%;
+    width: 160px;
+    height: 160px;
+}
+
+.main-container button:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.round-result {
+    color: grey;
 }
