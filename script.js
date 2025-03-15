@@ -1,6 +1,9 @@
 let playerScore = 0;
 let computerScore = 0;
 
+let playerChoice;
+let computerChoice;
+
 function getComputerChoice(){
     let randomNumber = Math.floor(Math.random() * 3) + 1;
 
@@ -14,16 +17,16 @@ function getComputerChoice(){
     }
 }
 
-function getPlayerChoice() {
-    let playerChoice = (prompt("Rock, paper or scissors?") ?? "").toLowerCase();
+const buttons = document.querySelectorAll("button");
 
-    if (playerChoice === "rock" || playerChoice === "paper" || playerChoice === "scissors"){
-        return playerChoice;
-    }else{
-        console.info("That's not an option! Try again")
-        return getPlayerChoice();
-    }
-}
+buttons.forEach(button => {
+    button.addEventListener("click", e => {
+        playerChoice = e.currentTarget.className;
+        computerChoice = getComputerChoice();
+
+        playRound(playerChoice, computerChoice)
+    })
+})
 
 function playRound(playerChoice, computerChoice) {
     if (playerChoice === computerChoice){
