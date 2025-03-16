@@ -4,6 +4,8 @@ let computerScore = 0;
 let playerChoice;
 let computerChoice;
 
+let currentRound = 0;
+
 function getComputerChoice(){
     let randomNumber = Math.floor(Math.random() * 3) + 1;
 
@@ -35,13 +37,15 @@ const roundResult = document.querySelector(".round-result");
 
 function playRound(playerChoice, computerChoice) {
     roundResult.style.color = "black";
+    currentRound++;
+    
     if (playerChoice === computerChoice){
-        roundResult.textContent = `It's a tie! You both chose ${playerChoice}.`;
+        roundResult.textContent = `Round ${currentRound} — It's a tie! You both chose ${playerChoice}.`;
     }else if (playerChoice === "rock" && computerChoice === "scissors" || playerChoice === "paper" && computerChoice === "rock" || playerChoice === "scissors" && computerChoice === "paper"){
-        roundResult.textContent = `You win! You chose ${playerChoice} and the computer chose ${computerChoice}.`;
+        roundResult.textContent = `Round ${currentRound} — You win! You chose ${playerChoice} and the computer chose ${computerChoice}.`;
         playerScore++;
     }else {
-        roundResult.textContent = `You lose! You chose ${playerChoice} and the computer chose ${computerChoice}.`;
+        roundResult.textContent = `Round ${currentRound} — You lose! You chose ${playerChoice} and the computer chose ${computerChoice}.`;
         computerScore++;
     }
     
@@ -68,6 +72,8 @@ function displayFinalResult() {
     button.textContent = "Play again";
 
     button.addEventListener("click", () => {
+        currentRound = 0;
+
         playerScore = 0;
         computerScore = 0;
 
