@@ -9,3 +9,14 @@ function getComputerChoice(){
             return "scissors"
     }
 }
+
+function getPlayerChoice(){
+    const playerChoice = (prompt("Rock, paper or scissors?") ?? "").toLowerCase();
+
+    if (playerChoice === "rock" || playerChoice === "paper" || playerChoice === "scissors"){
+        return playerChoice;
+    }else{
+        console.error("That isn't an option! Try again");
+        return getPlayerChoice();
+    }
+}
