@@ -46,6 +46,17 @@ function playGame(){
 
         playRound(playerChoice, computerChoice);
     }
+
+    if (roundsPlayed === 5) {
+        console.log(`Game's over! Player: ${playerScore} - Computer: ${computerScore}`);
+        if (playerScore === computerScore){
+            console.log("It's a tie!");
+        }else if (playerScore > computerScore){
+            console.log("You won!");
+        }else{
+            console.log("You lost!");
+        }
+    }
 }
 
 playGame();
