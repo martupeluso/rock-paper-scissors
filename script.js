@@ -2,18 +2,18 @@ function getComputerChoice(){
     const randomNumber = Math.floor(Math.random() * 3) + 1;
     switch (randomNumber) {
         case 1:
-            return "rock";
+            return "ROCK";
         case 2:
-            return "paper";
+            return "PAPER";
         case 3:
-            return "scissors"
+            return "SCISSORS"
     }
 }
 
 function getPlayerChoice(){
-    const playerChoice = (prompt("Rock, paper or scissors?") ?? "").toLowerCase();
+    const playerChoice = (prompt("Rock, paper or scissors?") ?? "").toUpperCase();
 
-    if (playerChoice === "rock" || playerChoice === "paper" || playerChoice === "scissors"){
+    if (playerChoice === "ROCK" || playerChoice === "PAPER" || playerChoice === "SCISSORS"){
         return playerChoice;
     }else{
         console.error("That isn't an option! Try again");
@@ -29,12 +29,12 @@ function playGame(){
 
     function playRound(playerChoice, computerChoice){
         if (playerChoice === computerChoice){
-            console.log(`It's a tie! You both chose ${playerChoice}`);
-        }else if(playerChoice === "rock" && computerChoice === "scissors" || playerChoice === "paper" && computerChoice === "rock" || playerChoice === "scissors" && computerChoice === "paper"){
-            console.log(`You win! You chose ${playerChoice} and the computer chose ${computerChoice}`);
+            console.log(`%cIt's a tie! You both chose ${playerChoice} 🤝`, "color: blue");
+        }else if(playerChoice === "ROCK" && computerChoice === "SCISSORS" || playerChoice === "PAPER" && computerChoice === "ROCK" || playerChoice === "SCISSORS" && computerChoice === "PAPER"){
+            console.log(`%cYou win! You chose ${playerChoice} and the computer chose ${computerChoice} 🎉`, "color: green");
             playerScore++;
         }else{
-            console.log(`You lose! You chose ${playerChoice} and the computer chose ${computerChoice}`);
+            console.log(`%cYou lose! You chose ${playerChoice} and the computer chose ${computerChoice} 😞`, "color: darkred");
             computerScore++;
         }
         roundsPlayed++;
@@ -52,9 +52,9 @@ function playGame(){
         if (playerScore === computerScore){
             console.log("It's a tie!");
         }else if (playerScore > computerScore){
-            console.log("You won!");
+            console.log("Player wins! 🏆");
         }else{
-            console.log("You lost!");
+            console.log("Computer wins! 💻");
         }
     }
 }
